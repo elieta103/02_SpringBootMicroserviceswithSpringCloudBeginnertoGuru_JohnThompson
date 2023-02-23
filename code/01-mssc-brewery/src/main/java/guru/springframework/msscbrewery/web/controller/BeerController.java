@@ -30,7 +30,7 @@ public class BeerController {
     public ResponseEntity handleSave (@RequestBody BeerDto beerDto){
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", "/api/v1/beer"+savedDto.getId().toString());
+        headers.add("Location", "/api/v1/beer/"+savedDto.getId().toString());
 
         return  new ResponseEntity(headers, HttpStatus.CREATED);
     }
@@ -46,7 +46,7 @@ public class BeerController {
 
     @DeleteMapping("/{beerId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void handleUpdate (@PathVariable("beerId") UUID beerId){
+    public void handleDelete (@PathVariable("beerId") UUID beerId){
         beerService.deleteById(beerId);
     }
 }

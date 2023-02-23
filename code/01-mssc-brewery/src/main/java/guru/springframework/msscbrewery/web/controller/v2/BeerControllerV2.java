@@ -28,7 +28,7 @@ public class BeerControllerV2 {
     public ResponseEntity handleSave (@RequestBody BeerDtoV2 beerDto){
         BeerDtoV2 savedDto = beerServiceV2.saveNewBeer(beerDto);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", "/api/v2/beer"+savedDto.getId().toString());
+        headers.add("Location", "/api/v2/beer/"+savedDto.getId().toString());
 
         return  new ResponseEntity(headers, HttpStatus.CREATED);
     }
