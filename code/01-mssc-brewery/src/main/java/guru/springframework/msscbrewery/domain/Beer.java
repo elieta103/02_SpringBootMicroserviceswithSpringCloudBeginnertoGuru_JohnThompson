@@ -1,36 +1,29 @@
-package guru.springframework.msscbrewery.model;
+package guru.springframework.msscbrewery.domain;
 
+import guru.springframework.msscbrewery.model.BeerStyleEnum;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Null;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.Nullable;
 
-import java.time.OffsetDateTime;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BeerDto {
+public class Beer {
 
-    @Null
     private UUID id;
-
-    @NotBlank
     private String beerName;
-
-    @NotBlank
-    private String beerStyle;
-
-    @Positive
+    private BeerStyleEnum beerStyle;
     private Long upc;
 
-    private OffsetDateTime createdDate;
-    private OffsetDateTime lastUpdatedDate;
+    private Timestamp createdDate;
+    private Timestamp lastUpdatedDate;
 
 }
