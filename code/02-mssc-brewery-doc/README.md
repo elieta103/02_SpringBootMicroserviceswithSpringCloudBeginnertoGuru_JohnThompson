@@ -1,4 +1,4 @@
-# 02 Beer Service Agregar documentacion
+# 02 Beer Brewery Agregar documentacion
 
 01. Agregar dependencias y plugin ascii doctor
 02. Crear directorio src/main/asciidoc
